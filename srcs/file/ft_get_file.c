@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_get_file.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/04 15:55:01 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/16 12:26:25 by ncoudsi          ###   ########.fr       */
+/*   Created: 2020/02/12 14:34:11 by ncoudsi           #+#    #+#             */
+/*   Updated: 2020/10/16 09:20:49 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Troncating a string from the start index of src until len characters
-**	are copied. Returns a heap allocated string. Note that we do not free src.
+**	Opening a file and getting its datas line by line. Storing it in a char **
+**	and returning it. If the path to the file is incorrect, returning NULL.
 */
 
-char	*ft_strsub(char *src, size_t start, size_t len)
+char	**ft_get_file(char *path)
 {
-	size_t	index;
-	char	*result;
+	char	**result;
+	int		fd;
+	char	*line;
 
-	index = 0;
 	result = NULL;
-	if (src == NULL || len == 0 || start + len > ft_strlen(src) )
-		return (NULL);
-	result = ft_strnew(len);
-	if (result == NULL)
-		return (NULL);
-	while (index < len)
+	fd = open(path, O_RDONLY);
+	if (fd < 3)
 	{
-		result[index] = src[start + index];
-		index++;
+		ft_putstr_fd(2, "Error : Invalid fd\n");
+		return (NULL);
 	}
-	result[index] = '\0';
+	line = NULL;
+	while (get_next_line(fd, &line) > 0)
+	{
+		ft_add_to_tab((void *)line, (void ***)&result);
+	}
+	ft_add_to_tab((void *)line, (void ***)&result);
+	close(fd);
 	return (result);
 }

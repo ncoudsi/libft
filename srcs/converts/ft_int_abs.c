@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_int_abs.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 21:04:53 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/15 14:12:14 by ncoudsi          ###   ########.fr       */
+/*   Created: 2019/12/02 09:00:01 by ldutriez          #+#    #+#             */
+/*   Updated: 2020/10/15 11:17:52 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Printing an integer value.
+**	Returning an absolute value of an integer.
 */
 
-void	ft_putnbr(int nb)
+int		ft_int_abs(int value)
 {
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	ft_putchar((nb % 10) + '0');
+	if (value == 0)
+		return (0);
+	if (value < 0)
+		value *= -1;
+	return (value);
 }

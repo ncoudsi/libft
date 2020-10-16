@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_float_floor.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 21:04:53 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/15 14:12:14 by ncoudsi          ###   ########.fr       */
+/*   Created: 2019/12/02 08:54:40 by ldutriez          #+#    #+#             */
+/*   Updated: 2020/10/15 10:40:43 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Printing an integer value.
+**	Casting a floating point value into an integer to round it down, then
+**	returning the rounded floating point value.
 */
 
-void	ft_putnbr(int nb)
+float	ft_float_floor(float value)
 {
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	ft_putchar((nb % 10) + '0');
+	int		int_value;
+	float	result;
+
+	int_value = (int)value;
+	result = int_value;
+	return (result);
 }

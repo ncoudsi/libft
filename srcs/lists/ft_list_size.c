@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_list_nodesize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tguilbar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 21:04:53 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/15 14:12:14 by ncoudsi          ###   ########.fr       */
+/*   Created: 2019/11/07 15:13:06 by tguilbar          #+#    #+#             */
+/*   Updated: 2020/02/25 09:48:23 by tguilbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Printing an integer value.
+**	Counting the number of nodes in a list and returning it.
 */
 
-void	ft_putnbr(int nb)
+int	ft_list_size(t_list_node *list)
 {
-	if (nb < 0)
+	int		result;
+
+	if (list == NULL)
+		return (0);
+	result = 1;
+	while (list->next != NULL)
 	{
-		ft_putchar('-');
-		nb = nb * -1;
+		list = list->next;
+		result++;
 	}
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	ft_putchar((nb % 10) + '0');
+	return (result);
 }

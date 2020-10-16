@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_is_char_in_str.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 21:04:53 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/15 14:12:14 by ncoudsi          ###   ########.fr       */
+/*   Created: 2020/10/16 11:22:56 by ncoudsi           #+#    #+#             */
+/*   Updated: 2020/10/16 11:25:09 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-**	Printing an integer value.
-*/
-
-void	ft_putnbr(int nb)
+t_bool	is_char_in_str(char to_find, char *str)
 {
-	if (nb < 0)
+	int	index;
+
+	index = 0 ;
+	while (str[index] != '\0')
 	{
-		ft_putchar('-');
-		nb = nb * -1;
+		if (str[index] == to_find)
+			return (true);
+		index++;
 	}
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	ft_putchar((nb % 10) + '0');
+	return (false);
 }

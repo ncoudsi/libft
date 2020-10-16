@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_malloc_node.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 21:04:53 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/15 14:12:14 by ncoudsi          ###   ########.fr       */
+/*   Created: 2020/10/16 09:46:35 by ncoudsi           #+#    #+#             */
+/*   Updated: 2020/10/16 11:12:16 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Printing an integer value.
+**	Allocating memory for a t_list_node pointer and filling it with data.
+**	Then returns the t_list_node pointer.
 */
 
-void	ft_putnbr(int nb)
+t_list_node	*ft_malloc_node(void *data)
 {
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	ft_putchar((nb % 10) + '0');
+	t_list_node	*result;
+
+	result = (t_list_node *)malloc(sizeof(t_list_node));
+	if (result == NULL)
+		return (NULL);
+	result->data = data;
+	result->next = NULL;
+	return (result);
 }

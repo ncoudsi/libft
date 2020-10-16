@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 17:09:28 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/14 15:27:22 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2020/10/16 11:01:30 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@
 # include <fcntl.h>
 # include "libft_list.h"
 # include "libft_defines.h"
-# include "get_next_line.h"
 
 #endif

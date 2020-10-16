@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_list_nodeiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tguilbar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 21:04:53 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/15 14:12:14 by ncoudsi          ###   ########.fr       */
+/*   Created: 2019/11/08 13:31:29 by tguilbar          #+#    #+#             */
+/*   Updated: 2020/02/25 11:14:58 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Printing an integer value.
+**	Applying a function to all the list's datas.
 */
 
-void	ft_putnbr(int nb)
+void	ft_list_iter(t_list_node *list, void (*function)(void *))
 {
-	if (nb < 0)
+	if (list == NULL)
+		return ;
+	while (list->next != NULL)
 	{
-		ft_putchar('-');
-		nb = nb * -1;
+		(*function)(list->data);
+		list = list->next;
 	}
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	ft_putchar((nb % 10) + '0');
+	(*function)(list->data);
 }

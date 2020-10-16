@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 17:06:39 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/14 16:43:20 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2020/10/16 11:24:28 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,24 @@
 
 # include "libft_includes.h"
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
+
+# define IS_NOT_A_LINE 2
+# define IS_A_LINE 1
+# define IS_END_OF_FILE 0
+# define IS_AN_ERROR -1
+
 /*
-**	Strings
+**	FILE
+*/
+
+int				get_next_line(int fd, char **line);
+char			**ft_get_file(char *path);
+
+/*
+**	STRING
 */
 
 char			*ft_strnew(size_t len);
@@ -36,9 +52,10 @@ char			*ft_strnstr(char *haystack, char *needle, size_t len);
 char			*ft_rm_charset(char *str, char *charset);
 
 /*
-** Checks
+** CHECKS
 */
 
+t_bool			is_char_in_str(char to_find, char *str);
 t_bool			ft_is_only_digits(char *str);
 t_bool			ft_is_digit(char c);
 t_bool			ft_strcmp(char *src, char *target);
@@ -51,24 +68,22 @@ t_bool			ft_is_alpha_num(char c);
 t_bool			ft_is_valid_file_path(char *path);
 
 /*
-** Converts
+** CONVERTS
 */
 
-float			ft_f_roof(float value);
-int				ft_i_roof(float value);
-float			ft_f_floor(float value);
-float			ft_f_round(float value);
-int				ft_i_abs(int value);
-float			ft_f_abs(float value);
+float			ft_float_roof(float value);
+float			ft_float_floor(float value);
+float			ft_float_round(float value);
+int				ft_int_abs(int value);
+float			ft_float_abs(float value);
 char			*ft_itoa_base(long long int nbr, char *base);
 char			*ft_itoa(long long int nbr);
 char			*ft_itoa_hexa(long long int nbr);
 char			*ft_itoa_octa(long long int nbr);
-char			*ft_itoa_unsigned_deci(unsigned int nbr);
 int				ft_atoi(char *str);
 
 /*
-** Input/Output
+** INPUT / OUTPUT
 */
 
 void			ft_putchar(char c);
@@ -80,7 +95,6 @@ void			ft_putstr_fp(char *path, char *str, char *mode);
 void			ft_putnbr(int nb);
 void			ft_putnbr_fd(int fd, int nb);
 void			ft_putnbr_fp(char *path, int nb, char *mode);
-char			**ft_get_file(char *path);
 void			ft_print_str_tab(char *name, char **tab);
 void			ft_print_str_tab_fd(int fd, char *name, char **tab);
 void			ft_print_str_tab_fp(char *path,
@@ -90,7 +104,7 @@ void			ft_print_int_tab_fd(int fd,
 				char *name, int *tab, size_t len);
 
 /*
-**	2D Arrays
+**	2D ARRAYS
 */
 
 void			**ft_tab_new(int size);
