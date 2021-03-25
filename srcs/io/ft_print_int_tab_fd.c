@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 14:52:13 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/15 13:50:46 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 13:50:24 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:01:50 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_print_int_tab_fd(int fd, char *name, int *tab, size_t len)
 	size_t		index;
 
 	index = 0;
+	if (fd < 0 || tab == NULL)
+		return ;
 	if (name != NULL)
 	{
 		ft_putchar_fd(fd, '{');

@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_upper.c                                      :+:      :+:    :+:   */
+/*   ft_nbr_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 12:25:38 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/14 15:36:22 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:18:09 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:18:11 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-**	Checking if a character is an upper case alphabetic.
-*/
-
-t_bool	ft_is_upper(char c)
+size_t	ft_nbr_len(int nbr)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (true);
-	return (false);
+	size_t result;
+
+	result = 1;
+	if (nbr < 0)
+		nbr *= -1;
+	while (nbr >= 10)
+	{
+		nbr /= 10;
+		result++;
+	}
+	return (result);
 }

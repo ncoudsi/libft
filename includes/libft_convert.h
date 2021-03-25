@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_node_add_front.c                                 :+:      :+:    :+:   */
+/*   libft_convert.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/02 10:01:23 by ldutriez          #+#    #+#             */
-/*   Updated: 2019/12/03 17:21:39 by ncoudsi          ###   ########.fr       */
+/*   Created: 2020/10/20 15:13:45 by ldutriez          #+#    #+#             */
+/*   Updated: 2020/10/21 17:07:37 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_CONVERT_H
+# define LIBFT_CONVERT_H
 
-/*
-**	Adding a node at the start of a linked list. See libft_list_node.h for further
-**	informations on t_list_node structure.
-*/
+char			*ft_itoa_base(long long int nbr, char *base);
+char			*ft_itoa(long long int nbr);
+char			*ft_itoa_hexa(long long int nbr);
+char			*ft_itoa_octa(long long int nbr);
+int				ft_atoi(char *str);
 
-void	ft_list_add_front(t_list_node **list, t_list_node *node)
-{
-	if (list == NULL || node == NULL)
-		return ;
-	node->next = *list;
-	*list = node;
-}
+#endif

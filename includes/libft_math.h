@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_defines.h                                    :+:      :+:    :+:   */
+/*   libft_math.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/04 14:50:02 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 13:09:56 by ldutriez         ###   ########.fr       */
+/*   Created: 2020/10/20 15:11:40 by ldutriez          #+#    #+#             */
+/*   Updated: 2020/10/21 17:45:56 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_DEFINES_H
-# define LIBFT_DEFINES_H
+#ifndef LIBFT_MATH_H
+# define LIBFT_MATH_H
 
-/*
-**	This enum is designed to replace booleans since this library is used in 42
-**	school and the norme of the school does not authorize the use of external
-**	libraries.
-*/
-
-typedef enum	e_bool
-{
-	true = 1,
-	false = 0
-}				t_bool;
+size_t			ft_nbr_len(int nbr);
+float			ft_float_roof(float value);
+float			ft_float_floor(float value);
+float			ft_float_round(float value);
+int				ft_int_abs(int value);
+float			ft_float_abs(float value);
+void			ft_swap_int(int *x, int *y);
+void			ft_swap_char(char *x, char *y);
 
 #endif

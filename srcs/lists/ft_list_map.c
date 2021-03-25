@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_nodemap.c                                        :+:      :+:    :+:   */
+/*   ft_list_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tguilbar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/09 15:17:49 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/02/25 11:17:46 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:10:59 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:46:32 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void (*destructor)(void *))
 			ft_list_clear(&result, destructor);
 			return (NULL);
 		}
-		ft_list_add_back(&result, new_node);
+		ft_list_push_back(&result, new_node);
 		list = list->next;
 	}
 	return (result);

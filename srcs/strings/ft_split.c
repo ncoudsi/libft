@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/10 10:57:07 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/16 12:32:10 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:21:54 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:27:22 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ static void		clear(char **tab, int tab_index)
 	while (tab_index >= 0)
 	{
 		free(tab[tab_index]);
+		tab[tab_index] = NULL;
 		tab_index--;
 	}
 	free(tab);
@@ -89,6 +90,7 @@ static void		fill_tab(char **tab, char *src,
 			if (tab[tab_index] == NULL)
 			{
 				clear(tab, tab_index);
+				tab = NULL;
 				return ;
 			}
 		}
@@ -116,7 +118,5 @@ char			**ft_split(char *src, char sep)
 	if (result == NULL)
 		return (NULL);
 	fill_tab(result, src, sep, tab_size);
-	if (result == NULL)
-		return (NULL);
 	return (result);
 }

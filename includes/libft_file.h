@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_defines.h                                    :+:      :+:    :+:   */
+/*   libft_file.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/04 14:50:02 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 13:09:56 by ldutriez         ###   ########.fr       */
+/*   Created: 2020/10/20 15:07:15 by ldutriez          #+#    #+#             */
+/*   Updated: 2020/10/20 15:30:14 by ldutriez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_DEFINES_H
-# define LIBFT_DEFINES_H
+#ifndef LIBFT_FILE_H
+# define LIBFT_FILE_H
 
-/*
-**	This enum is designed to replace booleans since this library is used in 42
-**	school and the norme of the school does not authorize the use of external
-**	libraries.
-*/
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
 
-typedef enum	e_bool
-{
-	true = 1,
-	false = 0
-}				t_bool;
+# define IS_NOT_A_LINE 2
+# define IS_A_LINE 1
+# define IS_END_OF_FILE 0
+# define IS_AN_ERROR -1
+
+int				ft_get_next_line(int fd, char **line);
+char			**ft_get_file(char *path);
 
 #endif

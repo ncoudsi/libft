@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_nodeclear.c                                      :+:      :+:    :+:   */
+/*   ft_list_clear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tguilbar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/08 12:47:03 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/02/25 11:13:35 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:09:46 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:09:47 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Adding a node at the end of a linked list. See libft_list_node.h for further
-**	informations on t_list_node structure.
+**	Apply the destructor function to all the datas and free each nodes.
 */
 
 void	ft_list_clear(t_list_node **list, void (*destructor)(void*))
@@ -26,7 +25,8 @@ void	ft_list_clear(t_list_node **list, void (*destructor)(void*))
 	while (*list != NULL)
 	{
 		tmp = *list;
-		(*destructor)(tmp->data);
+		if (destructor != NULL)
+			(*destructor)(tmp->data);
 		*list = tmp->next;
 		free(tmp);
 	}

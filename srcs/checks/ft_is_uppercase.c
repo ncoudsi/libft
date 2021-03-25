@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_tab.c                                      :+:      :+:    :+:   */
+/*   ft_is_uppercase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 14:41:42 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/03/25 14:41:50 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 12:34:24 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 12:34:26 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Free every entity in a 2 dimensions array and free the array itself.
+**	Checking if a character is an upper case alphabetic.
 */
 
-void	ft_free_tab(void **tab)
+t_bool	ft_is_uppercase(char c)
 {
-	int	index;
-
-	index = 0;
-	if (tab == NULL)
-		return ;
-	while (tab[index] != NULL)
-	{
-		free(tab[index]);
-		index++;
-	}
-	free(tab);
+	if (c >= 'A' && c <= 'Z')
+		return (true);
+	return (false);
 }

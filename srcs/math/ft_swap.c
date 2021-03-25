@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_float_floor.c                                   :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/02 08:54:40 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/15 10:40:43 by ncoudsi          ###   ########.fr       */
+/*   Created: 2020/10/21 17:18:37 by ldutriez          #+#    #+#             */
+/*   Updated: 2021/03/25 14:19:00 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Casting a floating point value into an integer to round it down, then
-**	returning the rounded floating point value.
+**	Thoses functions will use the XOR bit operator
+**	to swap two integers values.
 */
 
-float	ft_float_floor(float value)
+void	ft_swap_int(int *x, int *y)
 {
-	int		int_value;
-	float	result;
+	if (x == NULL || y == NULL)
+		return ;
+	*x = *x ^ *y;
+	*y = *x ^ *y;
+	*x = *x ^ *y;
+}
 
-	int_value = (int)value;
-	result = int_value;
-	return (result);
+void	ft_swap_char(char *x, char *y)
+{
+	if (x == NULL || y == NULL)
+		return ;
+	*x = *x ^ *y;
+	*y = *x ^ *y;
+	*x = *x ^ *y;
 }

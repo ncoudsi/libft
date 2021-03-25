@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 14:55:32 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/15 10:31:58 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/03/25 14:48:12 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,20 @@
 **	Cheking if 2 strings are entirely similar.
 */
 
-t_bool	ft_strcmp(char *src, char *target)
+int	ft_strcmp(char *str1, char *str2)
 {
-	size_t	index;
+	int	index;
 
 	index = 0;
-	if (src == NULL || target == NULL)
-		return (0);
-	while (src[index] != '\0' || target[index] != '\0')
+	if (str1 == NULL || str2 == NULL)
+		return (2);
+	while (str1[index] != '\0')
 	{
-		if (src[index] != target[index])
-			return (false);
+		if (str1[index] != str2[index] && str1[index] - str2[index] < 0)
+			return (-1);
+		if (str1[index] != str2[index] && str1[index] - str2[index] > 0)
+			return (1);
 		index++;
 	}
-	return (true);
+	return (0);
 }

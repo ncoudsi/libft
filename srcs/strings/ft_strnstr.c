@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/14 16:32:44 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/14 16:42:56 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:38:06 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:38:49 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ char	*ft_strnstr(char *haystack, char *needle, size_t len)
 	size_t	needle_index;
 
 	haystack_index = 0;
-	if (needle == NULL || ft_strlen(needle) == 0)
-		return (haystack);
+	if (haystack == NULL || needle == NULL || ft_strlen(needle) == 0)
+		return (NULL);
 	while (haystack[haystack_index] != '\0' && haystack_index < len)
 	{
 		needle_index = 0;

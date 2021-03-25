@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/12 10:47:17 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/15 10:35:53 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 13:17:37 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 13:18:32 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	ft_atoi(char *str)
 	int	index;
 	int	sign;
 
-	if (str == NULL)
-		return (0);
 	result = 0;
 	index = 0;
 	sign = 1;
+	if (str == NULL)
+		return (result);
 	while (str[index] == ' ')
 		index++;
 	if (str[index] == '+')

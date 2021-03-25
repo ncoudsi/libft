@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 15:00:18 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/15 14:20:24 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:02:25 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:02:45 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 void	ft_putnbr_fd(int fd, int nbr)
 {
+	if (fd < 0)
+		return ;
 	if (nbr < 0)
 	{
 		ft_putchar_fd(fd, '-');

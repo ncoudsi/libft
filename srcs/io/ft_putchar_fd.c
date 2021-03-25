@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 14:53:02 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/15 14:05:34 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:00:39 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:01:21 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@
 
 void	ft_putchar_fd(int fd, char c)
 {
+	if (fd < 0)
+		return ;
 	write(fd, &c, 1);
 }

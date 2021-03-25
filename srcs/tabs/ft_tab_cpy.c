@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/14 14:14:19 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/16 12:30:17 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:42:04 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:42:13 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	ft_tab_cpy(void **dst, void **src)
 	int	index;
 
 	index = 0;
+	if (dst == NULL || src == NULL)
+		return ;
 	while (src[index] != NULL)
 	{
 		dst[index] = src[index];

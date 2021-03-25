@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/14 15:09:42 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/16 12:28:50 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:41:35 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:41:36 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_add_to_tab(void *to_add, void ***tab)
 {
 	void	**tmp;
 
+	if (to_add == NULL || tab == NULL)
+		return ;
 	tmp = *tab;
 	*tab = ft_tab_new(ft_tab_len(tmp) + 1);
 	if (tmp != NULL)

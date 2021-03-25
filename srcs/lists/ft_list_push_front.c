@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_float_roof.c                                    :+:      :+:    :+:   */
+/*   ft_list_push_front.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/30 13:11:18 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/15 11:12:22 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:09:53 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:09:54 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Rounding up a floating point value.
+**	Adding a node at the start of a linked list. See libft_list_node.h
+**	for further informations on t_list_node structure.
 */
 
-float		ft_float_roof(float value)
+void	ft_list_push_front(t_list_node **list, t_list_node *node)
 {
-	float	result;
-	int		int_value;
-
-	int_value = value;
-	if (value == 0.0f)
-		return (value);
-	if (value < 0.0f)
-	{
-		result = int_value;
-		return (result);
-	}
-	if (value - int_value == 0.0f)
-	{
-		result = value;
-		return (result);
-	}
-	else
-		result = int_value + 1;
-	return (result);
+	if (list == NULL || node == NULL)
+		return ;
+	node->next = *list;
+	*list = node;
 }

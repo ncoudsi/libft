@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_tab.c                                      :+:      :+:    :+:   */
+/*   ft_float_roof.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 14:41:42 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/03/25 14:41:50 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:17:00 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:17:16 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Free every entity in a 2 dimensions array and free the array itself.
+**	Rounding up a floating point value.
 */
 
-void	ft_free_tab(void **tab)
+float		ft_float_roof(float value)
 {
-	int	index;
+	float	result;
+	int		int_value;
 
-	index = 0;
-	if (tab == NULL)
-		return ;
-	while (tab[index] != NULL)
+	int_value = value;
+	if (value == 0.0f)
+		return (value);
+	if (value < 0.0f)
 	{
-		free(tab[index]);
-		index++;
+		result = int_value;
+		return (result);
 	}
-	free(tab);
+	if (value - int_value == 0.0f)
+	{
+		result = value;
+		return (result);
+	}
+	else
+		result = int_value + 1;
+	return (result);
 }

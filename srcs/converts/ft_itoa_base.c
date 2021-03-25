@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/30 11:49:49 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/10/15 13:41:21 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 13:19:00 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 13:19:58 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,10 @@ char			*ft_itoa_base(long long int nbr, char *base)
 	unsigned long long int	abs_nbr;
 
 	base_len = ft_strlen(base);
-	nbr_len = ft_nbrlen(nbr, base_len);
+	nbr_len = ft_nbrlen(nbr, base_len) - 1;
 	result = ft_strnew(nbr_len);
+	if (base == NULL)
+		return (NULL);
 	if (nbr < 0)
 	{
 		result[0] = '-';
@@ -60,7 +62,6 @@ char			*ft_itoa_base(long long int nbr, char *base)
 	}
 	else
 		abs_nbr = nbr;
-	nbr_len--;
 	while (abs_nbr >= base_len)
 	{
 		result[nbr_len] = base[abs_nbr % base_len];

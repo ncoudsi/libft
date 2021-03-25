@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 15:01:40 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/15 14:12:36 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:03:15 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:44:49 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	ft_putstr_fd(int fd, char *str)
 {
-	if (str == NULL)
+	if (str == NULL || fd < 0)
 		return ;
 	write(fd, str, ft_strlen(str));
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 18:59:06 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/16 11:29:01 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:20:01 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:21:45 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int		len_without_charset(char *str, char *charset)
 		return (result);
 	while (str[index] != '\0')
 	{
-		if (is_char_in_str(str[index], charset) == false)
+		if (ft_is_char_in_str(str[index], charset) == false)
 			result++;
 		index++;
 	}
@@ -46,7 +46,7 @@ char			*ft_rm_charset(char *str, char *charset)
 	int		index;
 	int		result_index;
 
-	if (str == NULL)
+	if (str == NULL || charset == NULL)
 		return (NULL);
 	index = 0;
 	result_index = 0;
@@ -55,7 +55,7 @@ char			*ft_rm_charset(char *str, char *charset)
 		return (NULL);
 	while (str[index] != '\0')
 	{
-		if (is_char_in_str(str[index], charset) == false)
+		if (ft_is_char_in_str(str[index], charset) == false)
 		{
 			result[result_index] = str[index];
 			result_index++;
