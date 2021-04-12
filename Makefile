@@ -36,7 +36,11 @@ SRC 	=		ft_itoa_base.c ft_itoa.c ft_atoi.c ft_itoa_hexa.c ft_itoa_octa.c \
 				\
 				ft_list_push_back.c ft_list_clear.c ft_list_map.c \
 				ft_list_size.c ft_list_push_front.c ft_malloc_node.c \
-				ft_list_iter.c ft_list_remove_node.c
+				ft_list_iter.c ft_list_remove_node.c \
+				\
+				ft_malloc_int_node.c ft_int_list_push_back.c ft_int_list_push_front.c \
+				ft_int_list_size.c ft_int_list_remove_node.c ft_int_list_pop_back.c \
+				ft_int_list_pop_front.c
 
 OBJ		=		$(addprefix $(OBJ_DIR)/, $(SRC:%.c=%.o))
 

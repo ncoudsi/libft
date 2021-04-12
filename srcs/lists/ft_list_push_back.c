@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_add_back.c                                 :+:      :+:    :+:   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 14:06:31 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/03/25 14:07:29 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/12 11:35:11 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Adding a node at the end of a linked list. See libft_list_node.h for further
+**	Adding a node at the end of a linked list. See libft_list.h for further
 **	informations on t_list_node structure.
 */
 

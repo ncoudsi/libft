@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 08:21:26 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/03/25 14:07:43 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/12 12:42:30 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 **	The t_list_node structure is designed to put any data in it as
 **	a void pointer.
 **	The second variable is a pointer to the next t_list_node,
-**	in a chain of linked lists.
+**	in a chain of linked nodes.
 */
 
 typedef struct	s_list_node
@@ -37,4 +37,23 @@ int				ft_list_size(t_list_node *list);
 void			ft_list_remove_node(t_list_node **list, size_t node_index,
 												void (*destructor)(void*));
 
+/*
+**	The t_int_list_node structure is designed to put int data in it.
+**	The second variable is a pointer to the next t_int_list_node,
+**	in a chain of linked nodes.
+*/
+
+typedef struct	s_int_list_node
+{
+	int						data;
+	struct s_int_list_node	*next;
+}				t_int_list_node;
+
+t_int_list_node	*ft_malloc_int_node(int data);
+void			ft_int_list_push_back(t_int_list_node **list, t_int_list_node *node);
+void			ft_int_list_pop_back(t_int_list_node **list);
+void			ft_int_list_push_front(t_int_list_node **list, t_int_list_node *node);
+void			ft_int_list_pop_front(t_int_list_node **list);
+int				ft_int_list_size(t_int_list_node *list);
+void			ft_int_list_remove_node(t_int_list_node **list, t_int_list_node *to_remove);
 #endif

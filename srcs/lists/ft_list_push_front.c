@@ -6,14 +6,14 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 14:09:53 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/03/25 14:09:54 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/12 11:35:11 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Adding a node at the start of a linked list. See libft_list_node.h
+**	Adding a node at the start of a linked list. See libft_list.h
 **	for further informations on t_list_node structure.
 */
 

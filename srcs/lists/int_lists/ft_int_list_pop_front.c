@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_int_list_pop_front.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 14:14:51 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/12 11:36:54 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/04/12 12:41:01 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/04/12 12:45:29 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Counting the number of nodes in a list and returning it.
+**	Remove the first node of an int list.
 */
 
-int	ft_list_size(t_list_node *list)
+void	ft_int_list_pop_front(t_int_list_node **list)
 {
-	int		result;
+	t_int_list_node	*to_pop;
 
-	if (list == NULL)
-		return (0);
-	result = 1;
-	while (list->next != NULL)
+	if (list != NULL && *list != NULL)
 	{
-		list = list->next;
-		result++;
+		to_pop = *list;
+		*list = (*list)->next;
+		free(to_pop);
 	}
-	return (result);
 }

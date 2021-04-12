@@ -1,32 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_int_list_pop_back.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 14:14:51 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/12 11:36:54 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/04/12 12:05:20 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/04/12 12:45:14 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Counting the number of nodes in a list and returning it.
+**	Remove the last node of an int list.
 */
 
-int	ft_list_size(t_list_node *list)
+void	ft_int_list_pop_back(t_int_list_node **list)
 {
-	int		result;
+	t_int_list_node	*start;
+	t_int_list_node	*tmp;
 
-	if (list == NULL)
-		return (0);
-	result = 1;
-	while (list->next != NULL)
+	if (list != NULL && *list != NULL)
 	{
-		list = list->next;
-		result++;
+		start = *list;
+		while ((*list)->next != NULL)
+		{
+			tmp = *list;
+			*list = (*list)->next;
+		}
+		if (*list != start)
+		{
+			free(*list);
+			tmp->next = NULL;
+			*list = start;
+		}
+		else
+		{
+			free(*list);
+			*list = NULL;
+		}
 	}
-	return (result);
 }

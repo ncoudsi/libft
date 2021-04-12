@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_int_list_push_back.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 14:14:51 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/12 11:36:54 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/04/12 11:30:13 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/04/12 12:42:53 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Counting the number of nodes in a list and returning it.
+**	Adding a node at the end of a linked list. See libft_list.h for further
+**	informations on t_int_list_node structure.
 */
 
-int	ft_list_size(t_list_node *list)
+void	ft_int_list_push_back(t_int_list_node **list, t_int_list_node *node)
 {
-	int		result;
+	t_int_list_node	*start;
 
-	if (list == NULL)
-		return (0);
-	result = 1;
-	while (list->next != NULL)
+	start = *list;
+	if (node == NULL || list == NULL)
+		return ;
+	if (*list == NULL)
 	{
-		list = list->next;
-		result++;
+		*list = node;
+		return ;
 	}
-	return (result);
+	while ((*list)->next != NULL)
+		(*list) = (*list)->next;
+	(*list)->next = node;
+	*list = start;
 }
