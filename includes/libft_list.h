@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 08:21:26 by ldutriez          #+#    #+#             */
-/*   Updated: 2021/04/12 12:42:30 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/12 12:49:13 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,13 @@ typedef struct	s_int_list_node
 }				t_int_list_node;
 
 t_int_list_node	*ft_malloc_int_node(int data);
-void			ft_int_list_push_back(t_int_list_node **list, t_int_list_node *node);
+void			ft_int_list_push_back(t_int_list_node **list,
+												t_int_list_node *node);
 void			ft_int_list_pop_back(t_int_list_node **list);
-void			ft_int_list_push_front(t_int_list_node **list, t_int_list_node *node);
+void			ft_int_list_push_front(t_int_list_node **list,
+												t_int_list_node *node);
 void			ft_int_list_pop_front(t_int_list_node **list);
 int				ft_int_list_size(t_int_list_node *list);
-void			ft_int_list_remove_node(t_int_list_node **list, t_int_list_node *to_remove);
+void			ft_int_list_remove_node(t_int_list_node **list,
+											t_int_list_node *to_remove);
 #endif

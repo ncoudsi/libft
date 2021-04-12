@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 11:43:31 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/12 12:05:53 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/12 12:48:28 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 **	Removes a specific node from an int_list.
 */
 
-void	ft_int_list_remove_node(t_int_list_node **list, t_int_list_node *to_remove)
+void	ft_int_list_remove_node(t_int_list_node **list,
+													t_int_list_node *to_remove)
 {
 	t_int_list_node *tmp;
 
